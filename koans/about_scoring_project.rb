@@ -31,7 +31,6 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   counts = dice.each_with_object(Hash.new(0)) { |num,counts| counts[num] += 1 }
-  puts counts
   counts.reduce(0) do |acc, (num, count)|
     if num == 1
       acc += 1000 if count >= 3
